@@ -15,7 +15,7 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Nickname</th>
+              <th>Nombre de usuario</th>
               <th>Nombre</th>
               <th>Apellidos</th>
               <th>Correo</th>
@@ -96,12 +96,12 @@
                 <div class="form-check ml-5">
 
                   <label class="form-check-label" for="flexRadioDefault1">
-                    <input class="form-check-input mt-1" ngModel #gender = "ngModel" [ngModel]="gender" type="radio" name="M">
+                    <input class="form-check-input mt-1"  type="radio" name="gender">
                     Hombre
                   </label>
 
                   <label class="form-check-label ml-5" for="flexRadioDefault1">
-                    <input class="form-check-input" ngModel #gender = "ngModel" [ngModel]="gender" type="radio" name="F">
+                    <input class="form-check-input"  type="radio" name="gender">
                     Mujer
                   </label>
                 </div>
@@ -149,7 +149,7 @@
                   <span>Fecha</span>
                 </label>
                 <label class="form-group has-float-label">
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" >
                   <span>Pais</span>
                 </label>
                 <label class="form-group has-float-label">

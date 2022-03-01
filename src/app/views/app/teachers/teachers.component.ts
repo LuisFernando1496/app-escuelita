@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-
+import { countries } from '../../../../assets/countries/countries';
 @Component({
   selector: 'app-teachers',
   templateUrl: './teachers.component.html',
@@ -33,6 +33,11 @@ export class TeachersComponent {
   constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
+ countries.map((p:any) => {
+      console.log(p.name);
+      console.log(p.estados);
+    });
+    
   }
 
   modalActive(templateModalProfession: TemplateRef<any>): void {
