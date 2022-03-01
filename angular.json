@@ -59,6 +59,16 @@
                 "inject": false
               },
               {
+                "input": "src/assets/css/sass/themes/vien.light.american.scss",
+                "bundleName": "light.german",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/sass/themes/vien.light.german.scss",
+                "bundleName": "light.german",
+                "inject": false
+              },
+              {
                 "input": "src/assets/css/sass/themes/vien.light.greenmoss.scss",
                 "bundleName": "light.green.moss",
                 "inject": false

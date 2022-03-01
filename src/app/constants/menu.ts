@@ -19,17 +19,17 @@ const data: IMenuItem[] = [
     to: `${adminRoot}/cursos`
   },
   {
-    icon: 'simple-icon-people',
+    icon: 'iconsminds-students',
     label: 'Grupos',
     to: `${adminRoot}/grupos`
   },
   {
-    icon: 'simple-icon-people',
+    icon: 'simple-icon-eyeglass',
     label: 'Docentes',
     to: `${adminRoot}/docentes`
   },
   {
-    icon: 'simple-icon-people',
+    icon: 'iconsminds-student-male',
     label: 'Alumnos',
     to: `${adminRoot}/estudiantes`
   },

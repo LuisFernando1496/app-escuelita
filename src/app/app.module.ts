@@ -20,7 +20,7 @@ import { LayoutContainersModule } from './containers/layout/layout.containers.mo
     BrowserAnimationsModule,
     TranslateModule.forRoot(),
     HttpClientModule,
-   // AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   declarations: [
     AppComponent
@@ -28,4 +28,4 @@ import { LayoutContainersModule } from './containers/layout/layout.containers.mo
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {  }
