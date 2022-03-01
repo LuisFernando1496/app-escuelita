@@ -1,1 +1,181 @@
-<p>teachers works!</p>
+<div class="row">
+  <div class="col-12">
+    <app-heading></app-heading>
+    <app-breadcrumb></app-breadcrumb>
+    <div class="text-zero top-right-button-container">
+      <button class="btn btn-outline-primary" (click)="modalActive(templateModalProfession)">Agregar</button>
+    </div>
+    <div class="separator mb-5"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="card mb-4">
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Nickname</th>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Correo</th>
+              <th>Ciudad</th>
+              <th>Estado</th>
+              <th>Pais</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<ng-template #templateModalProfession>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Agregar Nuevo Docente</h4>
+    <button class="close pull-right" type="button" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="col">
+          <div class="card mb-4">
+            <div class="card-body">
+              <form #registerTecherProfession="ngForm" >
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel  name="username" class="form-control">
+                  <span>Nombre de usuario</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel #name = "ngModel" [ngModel]="name"  name="name" class="form-control">
+                  <span>Nombre</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel #last_name = "ngModel" [ngModel]="last_name"  name="username" class="form-control">
+                  <span>Apellido</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input class="form-control" ngModel #email = "ngModel" [ngModel]="email" name="username" >
+                  <span>Email</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="password" ngModel #password = "ngModel" [ngModel]="password"  name="username" class="form-control">
+                  <span>Password</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="password"  class="form-control" name="username">
+                  <span>Confirmar Password</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel #rfc = "ngModel" [ngModel]="rfc" class="form-control" name="username">
+                  <span>RFC</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel #curp = "ngModel" [ngModel]="curp" class="form-control" name="username">
+                  <span>CURP</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel #cedula = "ngModel" [ngModel]="cedula" class="form-control" name="username">
+                  <span>Cedula</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel #languages = "ngModel" [ngModel]="languages" class="form-control" name="username">
+                  <span>Idioma</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" ngModel #level = "ngModel" [ngModel]="level" class="form-control" name="username">
+                  <span>Nivel</span>
+                </label>
+                <label for="">Sexo</label>
+                <div class="form-check ml-5">
+
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input mt-1" ngModel #gender = "ngModel" [ngModel]="gender" type="radio" name="M">
+                    Hombre
+                  </label>
+
+                  <label class="form-check-label ml-5" for="flexRadioDefault1">
+                    <input class="form-check-input" ngModel #gender = "ngModel" [ngModel]="gender" type="radio" name="F">
+                    Mujer
+                  </label>
+                </div>
+
+               
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline-danger" type="button" aria-label="Close" (click)="modalRef.hide()">
+      Cancelar
+    </button>
+    <button class="btn btn-outline-primary" type="button" (click)="modalOriginActive(templateModalOrigin)">Siguiente</button>
+  </div>
+</ng-template>
+
+<ng-template #templateModalOrigin>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Agregar Nuevo Docente</h4>
+    <button class="close pull-right" type="button" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="col">
+          <div class="card mb-4">
+            <div class="card-body">
+              <form>
+                <label class="form-group has-float-label">
+                  <input type="text" class="form-control">
+                  <span>Banco</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" class="form-control">
+                  <span>Cuenta</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="time" class="form-control">
+                  <span>Fecha</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" class="form-control">
+                  <span>Pais</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" class="form-control">
+                  <span>Estado</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input type="text" class="form-control">
+                  <span>Ciudad</span>
+                </label>
+                <label class="form-group has-float-label">
+                  <input class="form-control">
+                  <span>Direccion</span>
+                </label>
+               
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline-danger" type="button" aria-label="Close" (click)="modalActive(templateModalProfession)">
+      Regresar
+    </button>
+    <button class="btn btn-outline-success" type="button" >Guardar</button>
+  </div>
+</ng-template>

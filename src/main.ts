@@ -13,7 +13,7 @@ const color =
   environment.isMultiColorActive || environment.isDarkSwitchActive
     ? getThemeColor()
     : environment.defaultColor;
-
+ console.log(color);
 import('./assets/css/sass/themes/vien.' + color + '.scss')
   .then((x) => {
     setThemeColor(color);

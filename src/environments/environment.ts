@@ -23,13 +23,13 @@ export const environment = {
   // 'dark.greenlime', 'dark.yellowgranola', 'dark.greysteel', 'dark.orangecarrot',
   // 'dark.redruby', 'dark.purplemonster'
   // */
-  defaultColor: 'light.blueolympic',
+  defaultColor: 'light.german',
   isDarkSwitchActive: false,
   defaultDirection: 'ltr',
   themeRadiusStorageKey: 'vien-themeradius',
   // isAuthGuardActive: true,
   // defaultRole: UserRole.Admin,
-  // firebase: {
+   firebase: {
   //   apiKey: 'AIzaSyCqoNLB_jTw4nncO12qR-eDH9gAeWiZVaw',
   //   authDomain: 'vien-angular-login.firebaseapp.com',
   //   databaseURL: 'https://vien-angular-login.firebaseio.com',
@@ -38,5 +38,5 @@ export const environment = {
   //   messagingSenderId: '16217062888',
   //   appId: '1:16217062888:web:6b08232ca0c9662fedb85d',
   //   measurementId: 'G-8ETT79WRRN'
-  // }
+   }
 };
