@@ -3,7 +3,16 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 
 import { getUserRole } from 'src/app/utils/util';
-import { environment } from 'src/environments/environment';
+//import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
+
+export interface Courses {
+  id: number;
+  name: string;
+  nivel: string;
+  fecha: string;
+  img: number;
+}
 
 export interface ISignInCredentials {
   email: string;
@@ -51,6 +60,10 @@ export class AuthService {
 
   principal(ruta:string):Observable<any>
   {
+    return this.http.get<any>(this.url + ruta, this.headersWithToken);
+  }
+
+  selectAll(ruta:string):Observable<any>{
     return this.http.get<any>(this.url + ruta, this.headersWithToken);
   }
 

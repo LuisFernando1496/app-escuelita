@@ -19,6 +19,8 @@ export class RegisterComponent {
               private router: Router) { }
 
   onSubmit(): void {
+    console.log("Registrar");
+    console.log(this.registerForm.value);
     if (this.registerForm.valid && !this.buttonDisabled) {
       this.buttonDisabled = true;
       this.buttonState = 'show-spinner';

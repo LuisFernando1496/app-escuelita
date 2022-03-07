@@ -13,7 +13,7 @@
     </a>
     <h6 class="mb-4">Login</h6>
 
-    <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <label class="form-group has-float-label">
         <input class="form-control" required nickName ngModel #nickName="ngModel" name="username" [(ngModel)]="nickNameModel" />
         <span>{{ 'user.email' | translate }}</span>
