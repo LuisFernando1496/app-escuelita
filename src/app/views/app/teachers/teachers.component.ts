@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { countries } from '../../../../assets/countries/countries';
 @Component({
@@ -7,55 +7,73 @@ import { countries } from '../../../../assets/countries/countries';
   templateUrl: './teachers.component.html',
   styleUrls: ['./teachers.component.scss']
 })
-export class TeachersComponent {
-
-
-  @ViewChild('registerTecherProfession') registerTecherProfession: NgForm;
-    username = '';
-    email = '';
-    password = '';
-    name = '';
-    last_name = '';
-    rol_id = '';
-    status = '';
-    rfc = '';
-    curp = '';
-    gender = ''; 
-    cedula = '';
-    bill = '';
-    level = '';
-    languages = '';
-
-  
-
+export class TeachersComponent implements OnInit{
+    formularioCrear: FormGroup;
     modalRef: BsModalRef;
     modalRefS: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+    flackRefS = false;
+    paises = countries;
+    estados:any;
+    ciudades:any;
+  constructor(private modalService: BsModalService, private form: FormBuilder) {
+      this.formularioCrear = this.form.group({
+          username : [''],
+          email : [''],
+          password : [''],
+          name : [''],
+          last_name : [''],
+          rfc : [''],
+          curp : [''],
+          gender : [''], 
+          cedula : [''],
+          bill : [''],
+          level : [''],
+          languages : [''],
+          bank : [''],
+          account : [''],
+          date : [''],
+          city : [''],
+          state : [''],
+          country : [''],
+      })
+   }
 
   ngOnInit(): void {
- countries.map((p:any) => {
-      console.log(p.name);
-      console.log(p.estados);
-    });
+ 
     
   }
 
   modalActive(templateModalProfession: TemplateRef<any>): void {
-
+    
+    this.flackRefS ? this.modalRefS.hide():'' ;
     this.modalRef = this.modalService.show(templateModalProfession);
-   
+    this.flackRefS = false;
   
   }
   modalOriginActive(templateModalOrigin: TemplateRef<any>, templateModalProfession: TemplateRef<any>): void {
-    //console.log(this.registerTecherProfession.value);
+
     this.modalRef.hide();
     this.modalRefS = this.modalService.show(templateModalOrigin);
+    this.flackRefS = true;
 
   }
-
-  onSubmit()
+  stateSelected(event:any)
   {
-    
+    const { value } =event.target;
+    const getSatates = this.paises.find( (states:any) => states.name == value);
+    const { estados } = getSatates;
+    this.estados = estados;
   }
-
+  citySelect(event:any)
+  {
+    const { value } = event.target;
+    const getCities = this.estados.find((city:any)=> city.name == value);
+    const { ciudades } = getCities;
+    this.ciudades = ciudades; 
+  }
+  save()
+  {
+    console.log(this.formularioCrear.value);
+  }
+  
 }

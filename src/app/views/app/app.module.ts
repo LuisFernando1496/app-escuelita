@@ -7,7 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { LayoutContainersModule } from 'src/app/containers/layout/layout.containers.module';
 import { GroupsComponent } from './groups/groups.component';
 import { UiCardsContainersModule } from 'src/app/containers/ui/cards/ui.cards.containers.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModalsContainersModule } from 'src/app/containers/ui/modals/ui.modals.containers.module';
 import { BootstrapModule } from 'src/app/components/bootstrap/bootstrap.module';
 import { ComponentsStateButtonModule } from 'src/app/components/state-button/components.state-button.module';
@@ -24,6 +24,7 @@ import { StudentsComponent } from './students/students.component';
 
 
 
+
 @NgModule({
   declarations: [BlankPageComponent, AppComponent, GroupsComponent, ProfileComponent, GrupoSelectComponent,TeachersComponent, StudentsComponent, CoursesComponent],
   imports: [
@@ -33,6 +34,7 @@ import { StudentsComponent } from './students/students.component';
     LayoutContainersModule,
     UiCardsContainersModule,
     FormsModule,
+    ReactiveFormsModule,
     UiModalsContainersModule,
     ComponentsStateButtonModule,
     BootstrapModule,
